@@ -32,13 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // Netmera.setBaseURL("YOUR PANEL DOMAIN URL")
 
                 // This can be called later, see documentation for details
-        Netmera.setBaseURL("https://test.sdpaas.com")
-               Netmera.setAPIKey("gFtyH_nz5WDXPYszPHO6UbJux0GCgvjwfsDHQriy-x0JHIP7sueOuQ")
+        Netmera.setBaseURL("your-base-url")
+               Netmera.setAPIKey("your-api-key")
       
-      //  Netmera.setBaseURL("https://preprod.netmera.com")
-        //        Netmera.setAPIKey("M76rdUoQJBszIn41yG9Xm47_3BAlU9jOo2UVUB4hjajGMHsVORU0VA")
-      
-               // Netmera.setAPIKey("gFtyH_nz5WBFjXglHpiaI8vKSiHvwZA-Ut4p5Q2O8tl_DCMmkPkGDg")
+    
                 Netmera.setLogLevel(NetmeraLogLevel.debug)
         // Call this method with needed notification types
         Netmera.requestPushNotificationAuthorization(forTypes: [.alert, .badge, .sound])
