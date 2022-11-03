@@ -10,6 +10,9 @@ import Firebase
 import AdSupport
 import AppTrackingTransparency
 
+import WidgetKit
+import ActivityKit
+
 class SignInVC: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
@@ -66,6 +69,24 @@ class SignInVC: UIViewController {
                     }
                 }
         
+    }
+    
+    
+    
+    @IBAction func btnAddLiveActivity(_ sender: Any) {
+        addLiveActivity()
+    }
+
+    func addLiveActivity(){
+        let scoreAttributes = ScoreAttributes()
+        let initialContentState = ScoreAttributes.ContentState(estimatedDeliveryTime: Date().addingTimeInterval(15 * 60))
+
+        do{
+            let activity = try Activity<ScoreAttributes>.request(attributes: scoreAttributes, contentState: initialContentState, pushType: nil)
+            print("Activity added succesfully. id: \(activity.id) ")
+        }catch{
+            print(error.localizedDescription)
+        }
     }
     /*
     // MARK: - Navigation
